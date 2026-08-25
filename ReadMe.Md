@@ -25,12 +25,12 @@ Example: You can use these files within our Postman Collection to validate your 
 
 ## Quick Start
 
-The DSB provides an easy and quick way for the Data Holders to validate their API schemas using a combination of [DSB Postman Collections](https://www.postman.com/dsb/cdr-tests), the [AJV (Another JSON Schema Validator) plugin](https://ajv.js.org/) configured within the Postman collection and the JSON schemas. 
+The DSB provides an easy and quick way for the Data Holders to validate their API schemas using a combination of [DSB Postman Collections](https://www.postman.com/data-standards-body/workspace/cdr-tests), the [AJV (Another JSON Schema Validator) plugin](https://ajv.js.org/) configured within the Postman collection and the JSON schemas. 
 
 
 ### How They Work Together
 
-The [DSB Postman Collections](https://www.postman.com/dsb/cdr-tests) will reference the latest version folder within this repository and include the `postman-validation-<SECTOR>-<VERSION>.json` file for API validation purposes, depending on which Postman collection file is referenced (banking/energy/common).
+The [DSB Postman Collections](https://www.postman.com/data-standards-body/workspace/cdr-tests) will reference the latest version folder within this repository and include the `postman-validation-<SECTOR>-<VERSION>.json` file for API validation purposes, depending on which Postman collection file is referenced (banking/energy/common).
 
 The `postman-validation-<SECTOR>-<VERSION>.json` was created with the `build-sector-postman-schema-files.js` utility. It combines the individual json files into a single file for better performance in Postman. 
 
