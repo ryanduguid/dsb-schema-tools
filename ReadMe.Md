@@ -38,6 +38,46 @@ When an API call is made using [Postman](https://www.postman.com/), the [Ajv](ht
 
 For more information on API testing with Postman, refer to the [Postman documentation](https://learning.postman.com/docs/writing-scripts/test-scripts/).
 
+## Validate banking data with Node.js
+
+The schemas also work with Ajv outside Postman. Using Node.js 18 or later, run
+the [banking account example](examples/validate-banking-account.js) from the
+repository root:
+
+```bash
+npm ci
+node examples/validate-banking-account.js
+```
+
+The example validates a [synthetic account](examples/banking-account.json)
+against `BankingAccountV2.json` in release `1.35.0`. To validate your own account
+object and choose a checked-in release:
+
+```bash
+node examples/validate-banking-account.js account.json 1.31.0
+```
+
+Use an individual account object, not the full API response envelope. The command
+exits with code 0 for valid data, or code 1 with error details for invalid data or
+a file/schema loading error.
+
+The schema files do not declare `$id`. Register each banking schema with its
+filename as the Ajv key, for example
+`ajv.addSchema(schema, 'BankingProductCategory.json')`. The key must match the
+corresponding `$ref`; an arbitrary name will not resolve that reference. The
+example also registers common schemas under `common/<filename>`, following the
+existing sector validator. All schemas come from the same release.
+
+The example uses the existing `ajv-formats` dependency and `strictSchema: false`
+to allow annotations such as `x-cds-type`. Those annotations do not themselves
+add validation rules. Schema validation alone does not establish CDR compliance.
+
+Run the example's regression checks with Node's built-in test runner:
+
+```bash
+node --test examples/validate-banking-account.test.js
+```
+
 ## Reporting Issues
 
 Encountered an issue? We're here to help. Please visit our [issue reporting guidelines](https://d61cds.notion.site/Issue-Reporting-Guidelines-71a329a0658c4b69a232eab95822509b?pvs=4) for submitting an issue.

@@ -1,0 +1,8 @@
+{
+  "accountId": "synthetic-account",
+  "displayName": "Example account",
+  "accountOwnership": "ONE_PARTY",
+  "maskedNumber": "xxxx1234",
+  "productCategory": "TRANS_AND_SAVINGS_ACCOUNTS",
+  "productName": "Example savings"
+}
