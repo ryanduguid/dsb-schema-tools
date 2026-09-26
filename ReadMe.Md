@@ -7,7 +7,7 @@ The JSON Schema Files Repository holds a comprehensive collection of JSON schema
 
 ## Local validation
 
-Use Node.js 18 or later. Run `npm ci`, then `npm test` for the validator regression tests and `npm run validate` to compile the checked-in 1.29.1 sector schemas. Compilation errors return exit status 1 while validation continues for later schemas.
+Use a maintained Node.js LTS release, version 22 or later. Run `npm ci`, then `npm test` for the validator regression tests and `npm run validate` to compile the checked-in 1.29.1 sector schemas. Compilation errors return exit status 1 while validation continues for later schemas.
 
 ## Using the JSON Schema Files
 
