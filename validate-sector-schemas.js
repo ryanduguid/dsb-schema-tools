@@ -18,8 +18,8 @@ sectors.forEach(sector => {
   const directoryPath = path.join(__dirname, version + '/schemas/' + sector);
   const commonDirectoryPath = path.join(__dirname, version + '/schemas/common');
   var dsbSchemas = [];
-  // Read the common schemas unless reading the register api
-  if (sector != 'register' || sector != 'admin' || sector != 'dcr') {
+  // Register, admin and DCR schemas do not use the common schemas.
+  if (sector != 'register' && sector != 'admin' && sector != 'dcr') {
     var commonFiles = fs.readdirSync(commonDirectoryPath);
     commonFiles.forEach(function (file) {
       var filePath = path.join(commonDirectoryPath, file);
@@ -54,6 +54,7 @@ sectors.forEach(sector => {
       validate.compile(data);
     }catch(e) {
         console.log('ERROR in file ' + file + ': ' + e.message);
+        process.exitCode = 1;
     }
   });
   console.log("Validated " + sector);

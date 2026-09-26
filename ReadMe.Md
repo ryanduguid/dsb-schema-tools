@@ -5,6 +5,10 @@
 
 The JSON Schema Files Repository holds a comprehensive collection of JSON schema files derived from the official published [Consumer Data Standards](https://consumerdatastandardsaustralia.github.io/standards/#introduction) (CDS). The [Data Standards Body](https://consumerdatastandards.gov.au/about) maintains this repository of schema files to facilitate robust schema validation. 
 
+## Local validation
+
+Use a maintained Node.js LTS release, version 22 or later. Run `npm ci`, then `npm test` for the validator regression tests and `npm run validate` to compile the checked-in 1.29.1 sector schemas. Compilation errors return exit status 1 while validation continues for later schemas.
+
 ## Using the JSON Schema Files
 
 The repository is organised by release versions of the [Consumer Data Standards](https://consumerdatastandardsaustralia.github.io/standards/#introduction). For instance, to find schemas related to CDS release version 1.29.0, navigate to the 1.29.0 folder located in the repository's root directory.
