@@ -1,6 +1,10 @@
 
 # JSON Schema Tool
 
+**Fork status**
+
+[![Fork code quality](https://app.codacy.com/project/badge/Grade/d297556c2ff943aaa4ec7e252f65d83c?branch=main)](https://app.codacy.com/gh/ryanduguid/dsb-schema-tools/dashboard)
+
 ## Overview
 
 The JSON Schema Files Repository holds a comprehensive collection of JSON schema files derived from the official published [Consumer Data Standards](https://consumerdatastandardsaustralia.github.io/standards/#introduction) (CDS). The [Data Standards Body](https://consumerdatastandards.gov.au/about) maintains this repository of schema files to facilitate robust schema validation. 
